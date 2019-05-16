@@ -194,7 +194,11 @@
 
     function randomWordmark() {
       if (!a_first_lock) {
-        a_first = randomInteger(a_strings.length);
+        var iterate = true;
+        while(iterate) {
+          a_first = randomInteger(a_strings.length);
+          iterate = a_first === a_second_set[a_second] ? true : false;
+        }
       }
       if (!a_second_lock) {
         var iterate = true;
