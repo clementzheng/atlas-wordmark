@@ -44,13 +44,6 @@
           width: 100vw;
       }
 
-      @media only screen 
-      and (min-width: 800px)  {
-        #container {
-          max-width: 1000px;
-        }      
-      }
-
       #ui-container {
           position: relative;
           float: left;
@@ -113,12 +106,23 @@
           float: left;
           box-sizing: border-box;
           width: 16.2%;
-          padding: 2em 1.5em;
+          padding: 15px 15px;
       }
 
       .wordmark-variation img {
           position: relative;
           width: 100%;
+      }
+
+      @media only screen 
+      and (min-width: 800px)  {
+        #container {
+          max-width: 1000px;
+        }  
+
+        .wordmark-variation {
+          padding: 2em 1.5em;
+        }    
       }
 
     </style>
