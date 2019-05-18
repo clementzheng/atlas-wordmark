@@ -105,8 +105,8 @@
           position: relative;
           float: left;
           box-sizing: border-box;
-          width: 16.2%;
-          padding: 15px 15px;
+          width: 30%;
+          padding: 2em 1.5em;
       }
 
       .wordmark-variation img {
@@ -121,6 +121,7 @@
         }  
 
         .wordmark-variation {
+          width: 16.2%;
           padding: 2em 1.5em;
         }    
       }
@@ -207,7 +208,7 @@
             arr2.push(a_second_set[i]);
         }
         iterating = true;
-        intervalFunction = setInterval(iterateInterval, 0);
+        intervalFunction = setInterval(iterateInterval, 5);
     }
 
     function randomInterval() {
@@ -238,7 +239,7 @@
             return a.val - b.val;
         });
         iterating = true;
-        intervalFunction = setInterval(iterateRandomInterval, 0);
+        intervalFunction = setInterval(iterateRandomInterval, 5);
     }
 
     function iterateInterval() {
