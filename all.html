@@ -228,11 +228,13 @@
         }
         for (i in rand1) {
             for (j in rand2) {
-                randarr.push({
-                    'index1':rand1[i].index, 
-                    'index2':rand2[j].index,
-                    'val':Math.random()
-                    });
+                if (a_first_set[rand1[i].index] !== a_second_set[rand2[j].index]) {
+                    randarr.push({
+                        'index1':rand1[i].index, 
+                        'index2':rand2[j].index,
+                        'val':Math.random()
+                        });
+                }
             }
         }
         randarr.sort(function(a, b) {
@@ -265,17 +267,11 @@
 
     function iterateRandomInterval() {
         if (iterating) {
-            var bool = true;
-            while(bool) {
-                if (randarr[randcount].index1 !== randarr[randcount].index2) {
-                    changeA(a_first_set, randarr[randcount].index1, a_second_set, randarr[randcount].index2);
-                    bool = false;
-                }
-                randcount++;
-                if (randcount >= randarr.length) {
-                    iterating = false;
-                    clearInterval(intervalFunction);
-                }
+            changeA(a_first_set, randarr[randcount].index1, a_second_set, randarr[randcount].index2);
+            randcount++;
+            if (randcount >= randarr.length) {
+                iterating = false;
+                clearInterval(intervalFunction);
             }
         }
     }
